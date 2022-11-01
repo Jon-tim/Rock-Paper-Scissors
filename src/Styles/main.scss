@@ -1,0 +1,110 @@
+@import "./utils";
+@import "./variables";
+
+* {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: radial-gradient($Radial-Gradient);
+  position: relative;
+  padding: 1.5rem;
+}
+// main {
+//   width: 100%;
+//   height: 100%;
+// }
+.scoreboard-section {
+  @include align-center;
+  justify-content: space-between;
+  border: 3px solid $Header-Outline;
+  border-radius: 10px;
+  margin: 0px auto 0px;
+  padding: 1rem;
+  width: 90%;
+  max-width: 500px;
+  img {
+    width: 100px;
+  }
+  .scoreboard {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    :first-child {
+      color: $Score-Text;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    :last-child {
+      color: $Dark-Text;
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.rules-btn {
+  @include center;
+  position: absolute;
+  bottom: 20px;
+  left: 0px;
+  right: 0px;
+  margin: 0px auto;
+  text-transform: uppercase;
+  color: #fff;
+  width: 150px;
+  height: 50px;
+  border: 2px solid $Header-Outline;
+  border-radius: 10px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  cursor: pointer;
+  @media (min-width: 768px) {
+    left: unset;
+    right: 20px;
+  }
+}
+
+// rules
+.rules {
+  @include center;
+  display: none;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 2.5rem 0rem;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  p {
+    text-transform: uppercase;
+    color: $Dark-Text;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .close-btn {
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #00000034;
+    border-radius: 50px;
+    cursor: pointer;
+    &:hover {
+      border: 3px solid $Dark-Text;
+      svg path {
+        opacity: 1;
+      }
+    }
+  }
+}
