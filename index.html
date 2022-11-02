@@ -27,10 +27,10 @@
         </div>
       </div>
       <div class="game-board">
+        <!-- On page load, till user selects a choice, this board is displayed, then hidden when a choice is made-->
         <div class="choices">
-
           <div class="gameplay">
-          <div class="top-circles">
+            <!-- <div class="top-circles"> -->
             <div class="circles paper">
               <div class="inner-circle">
                 <img src="images/icon-paper.svg" alt="paper" />
@@ -41,15 +41,27 @@
                 <img src="images/icon-scissors.svg" alt="Scissors" />
               </div>
             </div>
-          </div>
-          <div class="circles rock">
-            <div class="inner-circle">
-              <img src="images/icon-rock.svg" alt="rock" />
+            <!-- </div> -->
+            <div class="circles rock">
+              <div class="inner-circle">
+                <img src="images/icon-rock.svg" alt="rock" />
+              </div>
             </div>
           </div>
+          <div class="triangle">
+            <img src="images/bg-triangle.svg" alt="triangle shape" />
           </div>
-          <div class="triangle"><img src="images/bg-triangle.svg" alt="triangle shape"></div>
         </div>
+        <!-- When A choice is made, this board becomes displayed-->
+        <div class="game-on">
+          <div class="user-choice spot">
+            <div></div>
+            <p>you picked</p>
+          </div>
+          <div class="spot computer-choice">
+            <div></div>
+            <p>the house picked</p>
+          </div>
         </div>
       </div>
       <div class="rules-btn">rules</div>
@@ -71,5 +83,6 @@
         </svg>
       </div>
     </section>
+    <script src="src/JavaScript/index.js"></script>
   </body>
 </html>

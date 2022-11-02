@@ -67,6 +67,10 @@ body {
   font-weight: 700;
   cursor: pointer;
 }
+.rules-btn:hover {
+  background-color: hsl(217deg, 16%, 45%);
+  color: hsl(229deg, 25%, 31%);
+}
 @media (min-width: 768px) {
   .rules-btn {
     left: unset;
@@ -76,20 +80,23 @@ body {
 
 .game-board {
   width: 300px;
+  width: 100%;
   height: 280px;
   display: flex;
   align-items: center;
   margin: 3rem auto;
 }
 .game-board .choices {
-  width: 100%;
+  width: 300px;
   height: 100%;
+  margin: 0rem auto;
   max-width: 500px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   align-items: center;
   justify-content: center;
+  display: none;
 }
 .game-board .choices .triangle {
   grid-column: 1/2;
@@ -107,15 +114,18 @@ body {
   order: 1;
   height: 100%;
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-items: center;
+  gap: 1rem;
 }
 .game-board .choices .gameplay .circles {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   width: 130px;
   height: 130px;
   border-radius: 50%;
@@ -129,19 +139,15 @@ body {
   height: 100px;
   background-color: #fff;
 }
-.game-board .choices .gameplay .top-circles {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.game-board .choices .gameplay .top-circles .scissors {
+.game-board .choices .gameplay .scissors {
   background-image: linear-gradient(hsl(39deg, 89%, 49%), hsl(40deg, 84%, 53%));
 }
-.game-board .choices .gameplay .top-circles .paper {
+.game-board .choices .gameplay .paper {
   background-image: linear-gradient(hsl(230deg, 89%, 62%), hsl(230deg, 89%, 65%));
 }
 .game-board .choices .gameplay .rock {
+  grid-column: 1/-1;
+  grid-row: 2/3;
   background-image: linear-gradient(hsl(349deg, 71%, 52%), hsl(349deg, 70%, 56%));
 }
 
@@ -158,6 +164,7 @@ body {
   left: 0px;
   right: 0px;
   background: #fff;
+  height: 100vh;
   height: 100%;
   width: 100%;
 }
@@ -181,4 +188,27 @@ body {
 }
 .rules .close-btn:hover svg path {
   opacity: 1;
+}
+
+.game-on {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.game-on .spot {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+.game-on .spot p {
+  text-transform: uppercase;
+  color: white;
+}
+.game-on .spot div {
+  width: 100px;
+  height: 100px;
+  background-color: hsla(238deg, 48%, 15%, 0.35);
+  border-radius: 50%;
 }
