@@ -79,7 +79,7 @@ body {
 .game-board {
   width: 300px;
   width: 100%;
-  height: 280px;
+  // height: 280px;
   @include align-center;
   margin: 3rem auto;
   .choices {
@@ -92,7 +92,7 @@ body {
     grid-template-rows: 1fr;
     align-items: center;
     justify-content: center;
-    display: none;
+    // display: none;
     .triangle {
       // display: block;
       grid-column: 1/2;
@@ -116,33 +116,33 @@ body {
       align-items: center;
       justify-items: center;
       gap: 1rem;
-      .circles {
-        @include center;
-        cursor: pointer;
-        width: 130px;
-        height: 130px;
-        border-radius: 50%;
-        .inner-circle {
-          @include center;
-          border-radius: 50%;
-          width: 100px;
-          height: 100px;
-          background-color: #fff;
-        }
-      }
-      .scissors {
-        background-image: linear-gradient($Scissors-Gradient);
-      }
-      .paper {
-        background-image: linear-gradient($Paper-Gradient);
-      }
-      .rock {
-        grid-column: 1/-1;
-        grid-row: 2/3;
-        background-image: linear-gradient($Rock-Gradient);
-      }
     }
   }
+}
+.circles {
+  @include center;
+  cursor: pointer;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  .inner-circle {
+    @include center;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+  }
+}
+.scissors {
+  background-image: linear-gradient($Scissors-Gradient);
+}
+.paper {
+  background-image: linear-gradient($Paper-Gradient);
+}
+.rock {
+  grid-column: 1/-1;
+  grid-row: 2/3;
+  background-image: linear-gradient($Rock-Gradient);
 }
 
 // rules
@@ -185,7 +185,7 @@ body {
 
 // game board
 .game-on {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -198,21 +198,36 @@ body {
       text-transform: uppercase;
       color: white;
     }
-    div {
-      width: 100px;
-      height: 100px;
-      background-color: hsla(238, 48%, 15%, 0.35);
-      border-radius: 50%;
+    .slot {
+      width: 130px;
+      height: 130px;
+      @include center;
+      .slot-holder {
+        width: 100px;
+        border-radius: 50%;
+        height: 100px;
+        background-color: hsla(214, 59%, 8%, 0.185);
+      }
     }
   }
+
+  .slot.clear-slot {
+    width: 0px;
+    height: 0px;
+  }
+
+  .slot-holder.clear-list {
+    display: none;
+  }
+
   //.user-choice {
-    // width: 100%;
-    // align-items: flex-start;
-    // justify-content: flex-start;
+  // width: 100%;
+  // align-items: flex-start;
+  // justify-content: flex-start;
   //}
   //.computer-choice {
-    // width: 100%;
-    // justify-content: flex-end;
-    // div { }
+  // width: 100%;
+  // justify-content: flex-end;
+  // div { }
   //}
 }
