@@ -214,6 +214,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .game-on .spot .slot .slot-holder {
   width: 100px;
@@ -221,10 +222,6 @@ body {
   height: 100px;
   background-color: hsla(214deg, 59%, 8%, 0.185);
 }
-.game-on .slot.clear-slot {
-  width: 0px;
-  height: 0px;
-}
-.game-on .slot-holder.clear-list {
+.game-on .slot-holder.clear-slot {
   display: none;
 }

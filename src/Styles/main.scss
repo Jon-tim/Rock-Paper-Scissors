@@ -202,6 +202,7 @@ body {
       width: 130px;
       height: 130px;
       @include center;
+      flex-direction: column;
       .slot-holder {
         width: 100px;
         border-radius: 50%;
@@ -211,12 +212,12 @@ body {
     }
   }
 
-  .slot.clear-slot {
-    width: 0px;
-    height: 0px;
-  }
+  // .slot.clear-slot {
+  //   width: 0px;
+  //   height: 0px;
+  // }
 
-  .slot-holder.clear-list {
+  .slot-holder.clear-slot {
     display: none;
   }
 
