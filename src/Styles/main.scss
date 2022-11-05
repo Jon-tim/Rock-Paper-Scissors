@@ -232,3 +232,21 @@ body {
   // div { }
   //}
 }
+
+.win-lose {
+  width: 100px;
+  height: 100px;
+  background: #000;
+  p {
+    text-transform: uppercase;
+    color: #fff;
+  }
+  button {
+    text-transform: uppercase;
+    background-color: red;
+  }
+}
+
+// body {
+//   background-color: #fff;
+// }

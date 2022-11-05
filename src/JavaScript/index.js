@@ -46,33 +46,29 @@ function gameLogic(playerChoice, computerChoice) {
   let currentScore = Number(scoreBoard.textContent);
   // let score;
   if (paper1 && paper2) {
-    // console.log("draw");
+    console.log("draw");
     // currentScore;
     return;
   } else if (paper1 && rock2) {
     console.log("paper wins");
-    scoreBoard.textContent =
-      currentScore < 10 ? `0${currentScore + 1}` : currentScore;
+    // scoreBoard.textContent =
+    //   currentScore < 10 ? `0${currentScore + 1}` : currentScore;
     // console.log(currentScore);
   } else if (paper1 && scissors2) {
-    // console.log("comp wins");
-
-    currentScore = currentScore < 10 ? `0${currentScore - 1}` : currentScore--;
-    if (currentScore < 1) {
-      return (currentScore = `00`);
-    }
-
-    // scoreBoard.textContent =
+    console.log("comp wins");
+    // currentScore = currentScore < 10 ? `0${currentScore - 1}` : currentScore--;
+    // if (currentScore < 1) {
+    //   return (currentScore = `00`);
+    // }
   } else if (rock1 && rock2) {
-    // console.log("draw");
-    // currentScore;
+    console.log("draw");
     return;
   } else if (rock1 && paper2) {
     console.log("comp wins");
   } else if (rock1 && scissors2) {
     console.log("rock wins");
   } else if (scissors1 && scissors2) {
-    // console.log("draw");
+    console.log("draw");
     return;
   } else if (scissors1 && paper2) {
     console.log("player wins");
@@ -80,10 +76,8 @@ function gameLogic(playerChoice, computerChoice) {
     console.log("comp wins");
   }
 
-  scoreBoard.textContent = currentScore;
+  // scoreBoard.textContent = currentScore;
 }
-
-// console.log(scoreBoard.value++);
 
 //Computer's choice
 // Made the three choice available for the computer to make a choice from, then destructured it into an object. Why? Well, I found out that when I destructured it into an array, they shared the same css properties and weren't uique. So I used an object, biut I still witnessed same issue, but got over it using a JavaScript property and I didn't think it was necessary to touch the code anymore since it  was working already....looool, I'll check later is it can work with Arrays too.
